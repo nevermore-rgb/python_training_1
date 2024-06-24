@@ -14,9 +14,9 @@
 
 
 ## Topics covered for exercises 1: 
-- String formats \n
+- String formats
   https://www.w3schools.com/python/python_strings_format.asp
-- Converting Data types \n
+- Converting Data types
   The str(), int(), and float() Functions: https://automatetheboringstuff.com/2e/chapter1/
 - Slicing Strings
   https://www.w3schools.com/python/gloss_python_string_slice.asp
