@@ -13,7 +13,7 @@
 - Functions
 
 
-## Topics covered for exercises 1: 
+## References covered for exercises 1: 
 - String formats
   https://www.w3schools.com/python/python_strings_format.asp
 - Converting Data types
