@@ -6,6 +6,12 @@
 -  Conditional structure,
 -  Repetition structure.
 -  Try - Except structure.
+---------------------------
+- Functions
+- Arguments
+- Modules
+- Recursion
+- Closure
 
 
 ## Excersie
