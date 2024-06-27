@@ -14,7 +14,7 @@
 
 
 ## Excersie
-- Utlized:
+- Concepts Utlized:
   - Classes and Objects
   - Inheritance
   - Multiple Inheritance in Python
