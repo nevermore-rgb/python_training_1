@@ -68,17 +68,14 @@ def main():
             
             if type == "Manager":
                 dept = input("Enter employee department: ")
-            elif type == "Developer":
-                prglang = input("Enter employee programming language: ")
-            else:
-                print("Invalid type, please try again!\n")
-
-            if type == "Manager":
                 manager_1 = Manager(name,age,salary,dept)
                 Company.add_employee(manager_1,type)
             elif type == "Developer":
+                prglang = input("Enter employee programming language: ")
                 developer_1 = Developer(name,age,salary,prglang)
                 Company.add_employee(developer_1,type)
+            else:
+                print("Invalid type, please try again!\n")
 
             choice = int(input("\nWhat task would you like to perform?\n \n1. Add a new employee\n2. Display employees\n3. Calculate total salary\n4. Exit\n\n"))
 
