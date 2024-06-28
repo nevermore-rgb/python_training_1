@@ -3,7 +3,6 @@ class Employee:
         self.name = name
         self.age = age
         self.salary = salary
-        super().__init_subclass__()
 
 class Manager(Employee):
     def __init__(self, name, age, salary,department):
@@ -20,31 +19,24 @@ class Developer(Employee):
 class Company():
 
     employee_list = []
-    manager_list = []
-    developer_list = []
-
+  
     @classmethod
-    def add_employee(cls,emp,type):   
-        if type == "Manager":
-            cls.manager_list.append(emp)
-            cls.employee_list.append(emp)
-            print(f"\nEmployee {emp.name} added sucessfully!\n")
-        if type == "Developer":
-            cls.developer_list.append(emp)
-            cls.employee_list.append(emp)
-            print(f"\nEmployee {emp.name} added sucessfully!\n")
-
-
+    def add_employee(cls,emp):   
+        cls.employee_list.append(emp)
+        print(f"\nEmployee {emp.name} added sucessfully!\n")
+        
     @classmethod
     def display_employee(cls):
         if cls.employee_list == []:
             print("No available employees, add some!")        
-
-        for manager in cls.manager_list:
-            print(f"{manager.name}, a {manager.age} year old, in the {manager.department} with a Salary of {manager.salary}\n")
-        for developer in cls.developer_list:
-            print(f"{developer.name}, a {developer.age} year old, in the {developer.programming_language} with a Salary of {developer.salary}\n")
-        
+        for employee in cls.employee_list:
+            if isinstance(employee, Manager):
+                for manager in cls.manager_list:
+                    print(f"{manager.name}, a {manager.age} year old, in the {manager.department} with a Salary of {manager.salary}\n")
+            if isinstance(employee, Developer):
+                for developer in cls.developer_list:
+                    print(f"{developer.name}, a {developer.age} year old, in the {developer.programming_language} with a Salary of {developer.salary}\n")
+                
     @classmethod
     def calculate_salary(cls):
         total_salary = 0
@@ -56,6 +48,7 @@ class Company():
 def main():
     choice = int(input("\nWelcome to Estarta Solutions Employee Management System\nWhat task would you like to perform?\n \n1. Add a new employee\n2. Display employees\n3. Calculate total salary\n4. Exit\n\n"))
     
+    employee_list = []
     while (not choice == 4):
         if choice < 1 or choice > 4:
             choice = int(input("Invalid option, please input a value between 1 and 4: "))
@@ -69,11 +62,11 @@ def main():
             if type == "Manager":
                 dept = input("Enter employee department: ")
                 manager_1 = Manager(name,age,salary,dept)
-                Company.add_employee(manager_1,type)
+                Company.add_employee(manager_1)
             elif type == "Developer":
                 prglang = input("Enter employee programming language: ")
                 developer_1 = Developer(name,age,salary,prglang)
-                Company.add_employee(developer_1,type)
+                Company.add_employee(developer_1)
             else:
                 print("Invalid type, please try again!\n")
 
