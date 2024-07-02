@@ -1,4 +1,4 @@
-with open('output/test.txt', 'w') as f:
+with open('output/test.txt', 'a') as f:
     while True:
         i = input("Enter")
         if not i == "stop":
