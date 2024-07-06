@@ -15,7 +15,7 @@ InfoFinder is an application that provides comprehensive information about a loc
 - `wikipedia-api` library
 
 ## Example
-```Python
+```yaml
 Enter a country or a city: London
 
 Weather Information:
